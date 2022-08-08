@@ -1,0 +1,276 @@
+Africa,2,
+Afghanistan,4,34
+South America,5,19
+Albania,8,39
+Oceania,9,
+Antarctica,10,
+Western Africa,11,2
+Algeria,12,15
+Central America,13,19
+Eastern Africa,14,2
+Northern Africa,15,2
+American Samoa,16,61
+Middle Africa,17,2
+Southern Africa,18,2
+Americas,19,
+Andorra,20,39
+Northern America,21,19
+Angola,24,17
+Antigua and Barbuda,28,29
+Caribbean,29,19
+Eastern Asia,30,142
+Azerbaijan,31,145
+Argentina,32,5
+Southern Asia,34,142
+South-Eastern Asia,35,142
+Australia,36,53
+Southern Europe,39,150
+Austria,40,155
+Bahamas,44,29
+Bahrain,48,145
+Bangladesh,50,34
+Armenia,51,145
+Barbados,52,29
+Australia and New Zealand,53,9
+Melanesia,54,9
+Belgium,56,155
+Micronesia,57,9
+Bermuda,60,21
+Polynesia,61,9
+Bhutan,64,34
+Bolivia (Plurinational State of),68,5
+Bosnia and Herzegovina,70,39
+Botswana,72,18
+Bouvet Island,74,
+Brazil,76,5
+Belize,84,13
+British Indian Ocean Territory,86,
+Solomon Islands,90,54
+Virgin Islands (British),92,29
+Brunei Darussalam,96,35
+Bulgaria,100,151
+Myanmar,104,35
+Burundi,108,14
+Belarus,112,151
+Cambodia,116,35
+Cameroon,120,17
+Canada,124,21
+Cabo Verde,132,11
+Cayman Islands,136,29
+Central African Republic,140,17
+Asia,142,
+Central Asia,143,142
+Sri Lanka,144,34
+Western Asia,145,142
+Chad,148,17
+Europe,150,
+Eastern Europe,151,150
+Chile,152,5
+Northern Europe,154,150
+Western Europe,155,150
+China,156,30
+"Taiwan, Province of China",158,30
+Christmas Island,162,
+Cocos (Keeling) Islands,166,
+Colombia,170,5
+Comoros,174,14
+Mayotte,175,14
+Congo,178,17
+Congo (Democratic Republic of the),180,17
+Cook Islands,184,61
+Costa Rica,188,13
+Croatia,191,39
+Cuba,192,29
+Cyprus,196,145
+Czech Republic,203,151
+Benin,204,11
+Denmark,208,154
+Dominica,212,29
+Dominican Republic,214,29
+Ecuador,218,5
+El Salvador,222,13
+Equatorial Guinea,226,17
+Ethiopia,231,14
+Eritrea,232,14
+Estonia,233,154
+Faroe Islands,234,154
+Falkland Islands (Malvinas),238,5
+South Georgia and the South Sandwich Islands,239,
+Fiji,242,54
+Finland,246,154
+Åland Islands,248,154
+France,250,155
+French Guiana,254,5
+French Polynesia,258,61
+French Southern Territories,260,
+Djibouti,262,14
+Gabon,266,17
+Georgia,268,145
+Gambia,270,11
+"Palestine, State of",275,145
+Germany,276,155
+Ghana,288,11
+Gibraltar,292,39
+Kiribati,296,57
+Greece,300,39
+Greenland,304,21
+Grenada,308,29
+Guadeloupe,312,29
+Guam,316,57
+Guatemala,320,13
+Guinea,324,11
+Guyana,328,5
+Haiti,332,29
+Heard Island and McDonald Islands,334,
+Holy See,336,39
+Honduras,340,13
+Hong Kong,344,30
+Hungary,348,151
+Iceland,352,154
+India,356,34
+Indonesia,360,35
+Iran (Islamic Republic of),364,34
+Iraq,368,145
+Ireland,372,154
+Israel,376,145
+Italy,380,39
+Côte d'Ivoire,384,11
+Jamaica,388,29
+Japan,392,30
+Kazakhstan,398,143
+Jordan,400,145
+Kenya,404,14
+Korea (Democratic People's Republic of),408,30
+Korea (Republic of),410,30
+Kuwait,414,145
+Kyrgyzstan,417,143
+Lao People's Democratic Republic,418,35
+Lebanon,422,145
+Lesotho,426,18
+Latvia,428,154
+Liberia,430,11
+Libya,434,15
+Liechtenstein,438,155
+Lithuania,440,154
+Luxembourg,442,155
+Macao,446,30
+Madagascar,450,14
+Malawi,454,14
+Malaysia,458,35
+Maldives,462,34
+Mali,466,11
+Malta,470,39
+Martinique,474,29
+Mauritania,478,11
+Mauritius,480,14
+Mexico,484,13
+Monaco,492,155
+Mongolia,496,30
+Moldova (Republic of),498,151
+Montenegro,499,39
+Montserrat,500,29
+Morocco,504,15
+Mozambique,508,14
+Oman,512,145
+Namibia,516,18
+Nauru,520,57
+Nepal,524,34
+Netherlands,528,155
+Curaçao,531,29
+Aruba,533,29
+Sint Maarten (Dutch part),534,29
+"Bonaire, Sint Eustatius and Saba",535,29
+New Caledonia,540,54
+Vanuatu,548,54
+New Zealand,554,53
+Nicaragua,558,13
+Niger,562,11
+Nigeria,566,11
+Niue,570,61
+Norfolk Island,574,53
+Norway,578,154
+Northern Mariana Islands,580,57
+United States Minor Outlying Islands,581,
+Micronesia (Federated States of),583,57
+Marshall Islands,584,57
+Palau,585,57
+Pakistan,586,34
+Panama,591,13
+Papua New Guinea,598,54
+Paraguay,600,5
+Peru,604,5
+Philippines,608,35
+Pitcairn,612,61
+Poland,616,151
+Portugal,620,39
+Guinea-Bissau,624,11
+Timor-Leste,626,35
+Puerto Rico,630,29
+Qatar,634,145
+Réunion,638,14
+Romania,642,151
+Russian Federation,643,151
+Rwanda,646,14
+Saint Barthélemy,652,29
+"Saint Helena, Ascension and Tristan da Cunha",654,11
+Saint Kitts and Nevis,659,29
+Anguilla,660,29
+Saint Lucia,662,29
+Saint Martin (French part),663,29
+Saint Pierre and Miquelon,666,21
+Saint Vincent and the Grenadines,670,29
+San Marino,674,39
+Sao Tome and Principe,678,17
+Saudi Arabia,682,145
+Senegal,686,11
+Serbia,688,39
+Seychelles,690,14
+Sierra Leone,694,11
+Singapore,702,35
+Slovakia,703,151
+Viet Nam,704,35
+Slovenia,705,39
+Somalia,706,14
+South Africa,710,18
+Zimbabwe,716,14
+Spain,724,39
+South Sudan,728,14
+Sudan,729,15
+Western Sahara,732,15
+Suriname,740,5
+Svalbard and Jan Mayen,744,154
+Swaziland,748,18
+Sweden,752,154
+Switzerland,756,155
+Syrian Arab Republic,760,145
+Tajikistan,762,143
+Thailand,764,35
+Togo,768,11
+Tokelau,772,61
+Tonga,776,61
+Trinidad and Tobago,780,29
+United Arab Emirates,784,145
+Tunisia,788,15
+Turkey,792,145
+Turkmenistan,795,143
+Turks and Caicos Islands,796,29
+Tuvalu,798,61
+Uganda,800,14
+Ukraine,804,151
+Macedonia (the former Yugoslav Republic of),807,39
+Egypt,818,15
+United Kingdom of Great Britain and Northern Ireland,826,154
+Guernsey,831,154
+Jersey,832,154
+Isle of Man,833,154
+"Tanzania, United Republic of",834,14
+United States of America,840,21
+Virgin Islands (U.S.),850,29
+Burkina Faso,854,11
+Uruguay,858,5
+Uzbekistan,860,143
+Venezuela (Bolivarian Republic of),862,5
+Wallis and Futuna,876,61
+Samoa,882,61
+Yemen,887,145
+Zambia,894,14
