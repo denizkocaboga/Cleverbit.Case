@@ -36,11 +36,5 @@ namespace Cleverbit.Case.Api.Controllers
             //ToDo: Use corelationId all this request life time. e.g. fired events.
             //HttpContext.Request.Headers["X-CorelationId"];
         }
-
-        [Route("health")]
-        public ActionResult Health()
-        {
-            return Health();
-        }
     }
 }

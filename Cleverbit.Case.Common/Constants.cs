@@ -2,7 +2,7 @@
 {
     public class RedisPrefix
     {
-        public const string Ancestors = "ancestor";
-        public const string Employees = "employee";
+        public const string Ancestors = "region:ancestors";        
+        public const string Employees = "region:employees";
     }
 }

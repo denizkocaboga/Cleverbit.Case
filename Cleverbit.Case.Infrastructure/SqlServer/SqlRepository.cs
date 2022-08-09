@@ -17,6 +17,7 @@ namespace Cleverbit.Case.Infrastructure.SqlServer
         Task CreateRegion(CreateRegionCommand command);
         Task CreateRegions(IEnumerable<CreateRegionCommand> models);
         Task ReinitializeDb();
+        Task<IEnumerable<Region>> GetAllRegions();
     }
 
     public class SqlRepository : ISqlRepository
@@ -85,6 +86,12 @@ namespace Cleverbit.Case.Infrastructure.SqlServer
             //ToDo: Publish EmployeeCreatedEvent. And set cache on consumer
 
             return entry.Entity.Id;
+        }
+
+        public async Task<IEnumerable<Region>> GetAllRegions()
+        {
+            Region[] result = await _db.Regions.ToArrayAsync();
+            return result;
         }
     }
 }

@@ -23,21 +23,25 @@ namespace Cleverbit.Case.Infrastructure
         {
             services.AddScoped(p =>
             {
-                IConnectionMultiplexer multiplexer = ConnectionMultiplexer.Connect("clbredis.redis.cache.windows.net,password=7ACqzeWnmIQFsZbFVdaUmDFVM7pQtnbmsAzCaKzQl6k=");
+                IConnectionMultiplexer multiplexer = ConnectionMultiplexer.Connect(CacheConfig);
                 return multiplexer.GetDatabase();
             });
 
             services.AddScoped<ICacheRepository, RedisRepository>();
         }
 
+        //ToDo: Move Config to appsettings.
+
+        private static string CacheConfig => "127.0.0.1,AllowAdmin=true";
+        //This redis active and ready for use on azure.
+        //private static string CacheConfig => "clbredis.redis.cache.windows.net,AllowAdmin=true,password=7ACqzeWnmIQFsZbFVdaUmDFVM7pQtnbmsAzCaKzQl6k=";
+
         public static void AddCacheSingleton(this IServiceCollection services)
         {
             services.AddSingleton(p =>
             {
-                //ToDo: Move Config to appsettings.
                 //ToDo: Inject IConnectionMultiplexer and get database in repository.
-                string redisConfig = "clbredis.redis.cache.windows.net,AllowAdmin=true,password=7ACqzeWnmIQFsZbFVdaUmDFVM7pQtnbmsAzCaKzQl6k=";
-                IConnectionMultiplexer multiplexer = ConnectionMultiplexer.Connect(redisConfig);
+                IConnectionMultiplexer multiplexer = ConnectionMultiplexer.Connect(CacheConfig);
                 multiplexer.GetServer(multiplexer.GetEndPoints().FirstOrDefault()).FlushAllDatabases();//ToDo: Move this in repository
                 IDatabase result = multiplexer.GetDatabase();
 
@@ -46,14 +50,14 @@ namespace Cleverbit.Case.Infrastructure
 
             services.AddSingleton<ICacheInitialRepository, RedisInitialRepository>();
         }
-        
+
         public static void AddCsvContext(this IServiceCollection services)
         {
             services.AddScoped<IFactory, Factory>();
             services.AddScoped<ICsvContext, CsvHelperContext>();
         }
         public static void AddCsvContextSingleton(this IServiceCollection services)
-        {            
+        {
             services.AddSingleton<IFactory, Factory>();
             services.AddSingleton<ICsvContext, CsvHelperContext>();
         }

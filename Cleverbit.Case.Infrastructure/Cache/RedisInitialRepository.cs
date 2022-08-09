@@ -18,7 +18,7 @@ namespace Cleverbit.Case.Infrastructure.Cache
     public class RedisInitialRepository : ICacheInitialRepository
     {
 
-        private readonly Dictionary<int, Ancestor> _ancestors = new();
+        private readonly Dictionary<int, RegionAncestor> _ancestors = new();
         private readonly Dictionary<int, List<string>> _regionEmployees = new();
         private readonly ILogger<RedisInitialRepository> _logger;
         private readonly IDatabase _cache;
@@ -32,8 +32,7 @@ namespace Cleverbit.Case.Infrastructure.Cache
         public async Task LoadRegionAncestor(IEnumerable<CreateRegionCommand> regions)
         {
             GenerateAncestors(regions);
-
-            //ToDo: Use constants for prefix
+            
             //ToDo: Search Bulk 
             foreach (var item in _ancestors)
                 await _cache.SetAddAncestorsAsync(item.Key, item.Value.GetAncestorIds());
@@ -46,7 +45,7 @@ namespace Cleverbit.Case.Infrastructure.Cache
         {
             GenerateRegionEmployees(employees);
 
-            //ToDo:Parallel Foreach ??
+            //ToDo:Bulk Set or Parallel Foreach ??
             foreach (var regionEmployee in _regionEmployees)
                 await _cache.SetAddEmployeesAsync(regionEmployee.Key, regionEmployee.Value);
 
@@ -57,7 +56,7 @@ namespace Cleverbit.Case.Infrastructure.Cache
         {
             foreach (var region in regions)
             {
-                Ancestor ancestor = GenerateAncestor(region.Id);
+                RegionAncestor ancestor = GenerateAncestor(region.Id);
 
                 if (region.ParentId.HasValue)
                     GenerateParentAncestor(region.ParentId.Value, ancestor);
@@ -85,18 +84,18 @@ namespace Cleverbit.Case.Infrastructure.Cache
             }
         }
 
-        private void GenerateParentAncestor(int parentId, Ancestor ancestor)
+        private void GenerateParentAncestor(int parentId, RegionAncestor ancestor)
         {
-            if (!_ancestors.TryGetValue(parentId, out Ancestor parentAncestor))
-                _ancestors.Add(parentId, parentAncestor = new Ancestor { Id = parentId });
+            if (!_ancestors.TryGetValue(parentId, out RegionAncestor parentAncestor))
+                _ancestors.Add(parentId, parentAncestor = new RegionAncestor { Id = parentId });
 
             ancestor.Parent = parentAncestor;
         }
-        private Ancestor GenerateAncestor(int id)
+        private RegionAncestor GenerateAncestor(int id)
         {
-            if (!_ancestors.TryGetValue(id, out Ancestor ancestor))
+            if (!_ancestors.TryGetValue(id, out RegionAncestor ancestor))
             {
-                ancestor = new Ancestor { Id = id };
+                ancestor = new RegionAncestor { Id = id };
                 _ancestors.Add(id, ancestor);
             }
 

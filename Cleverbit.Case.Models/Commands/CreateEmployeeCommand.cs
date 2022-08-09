@@ -5,20 +5,22 @@ using System.Text.Json.Serialization;
 namespace Cleverbit.Case.Models.Requests
 {
     public record CreateEmployeeCommand
+    (
+        [Required]
+        int RegionId,
+
+        [Required]
+        [StringLength(100)]
+        string Name,
+
+        [Required]
+        [StringLength(100)]
+        string Surname
+    )
     {
-        [Required]        
-        public int RegionId { get; set; }
-
-        [Required]
-        [StringLength(100)]
-        public string Name { get; set; }
-
-        [Required]
-        [StringLength(100)]
-        public string Surname { get; set; }
 
         [NotMapped]
-        [JsonIgnore]        
+        [JsonIgnore]
         public string NameSurname => $"{Name} {Surname}";
     }
 }

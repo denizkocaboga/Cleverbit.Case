@@ -45,7 +45,7 @@ namespace Cleverbit.Case.Business.Services
         {
             bool isRegionExists = await _cache.IsRegionExits(command.RegionId);
             if (!isRegionExists)
-                throw new UnprocessableException($"regionId ({command.RegionId}) not exists");
+                throw new UnprocessableException($"there is no any region with this regionId:{command.RegionId}");
 
         }
     }

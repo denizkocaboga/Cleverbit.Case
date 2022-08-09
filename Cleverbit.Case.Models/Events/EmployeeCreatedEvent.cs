@@ -1,4 +1,4 @@
 ﻿namespace Cleverbit.Case.Models.Events
 {
-    public record EmployeeCreatedEvent(int Id) { }
+    public record EmployeeCreatedEvent(int Id, int? regionId) { }
 }

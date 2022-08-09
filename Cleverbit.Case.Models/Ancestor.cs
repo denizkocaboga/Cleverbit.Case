@@ -2,10 +2,10 @@
 
 namespace Cleverbit.Case.Business
 {
-    public class Ancestor
+    public class RegionAncestor
     {
         public int Id { get; set; }
-        public Ancestor Parent { get; set; }
+        public RegionAncestor Parent { get; set; }
 
         public IList<int> GetAncestorIds()
         {

@@ -1,0 +1,36 @@
+﻿@{
+	@using Cleverbit.Case.Models.Entities
+
+	ViewData["Title"] = "Home Page";
+	@model Region[]
+
+}
+
+<div class="text-left">
+	<div class="row">
+		<div class="col-md-4">
+			<div class="form-group">
+				@Html.DropDownList("Regions", new SelectList(ViewBag.Regions, "Id", "Name") ,"Select Region", new { @onchange="getEmployees(this.value)" } )
+			</div>
+			<br />
+			<div>
+				<label><b>Employees</b></label>
+				<div id="lstEmployees">
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<script>
+	function getEmployees(val) {
+		$.get('https://localhost:7294/Region/' + val + '/employees',
+			function(data) {
+				$('#lstEmployees').empty();
+				$.each(data, function(i, item) {
+					$('#lstEmployees').append(i + 1).append(". ").append(item).append("<br/>");
+				});
+			});
+	}
+</script>

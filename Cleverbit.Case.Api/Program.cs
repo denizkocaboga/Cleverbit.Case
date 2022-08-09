@@ -1,13 +1,6 @@
-using Cleverbit.Case.Common.Exceptions;
-using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Diagnostics;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using StackExchange.Redis;
-using System;
-using System.Net;
 
 namespace Cleverbit.Case.Api
 {
@@ -16,6 +9,8 @@ namespace Cleverbit.Case.Api
     {
         public static void Main(string[] args)
         {
+            var allowedOrigins = "allowedOrigins";
+
             var builder = WebApplication.CreateBuilder(args);
 
             IServiceCollection services = builder.Services;
@@ -28,10 +23,15 @@ namespace Cleverbit.Case.Api
 
             services.AddBusinessServices();
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy(allowedOrigins, policy => { policy.WithOrigins("https://localhost:7211", "http://localhost:5211"); });
+            });
+
             var app = builder.Build();
 
             app.UseExceptionHandler("/error");
-            app.MapHealthChecks("/error/health");
+            app.MapHealthChecks("/healtz");
 
             if (app.Environment.IsDevelopment())
             {
@@ -43,6 +43,7 @@ namespace Cleverbit.Case.Api
 
             app.UseAuthorization();
 
+            app.UseCors(allowedOrigins);
 
             app.MapControllers();
 

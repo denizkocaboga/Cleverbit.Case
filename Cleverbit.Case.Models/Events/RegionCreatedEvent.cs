@@ -1,4 +1,4 @@
 ﻿namespace Cleverbit.Case.Models.Events
 {
-    public record RegionCreatedEvent(int Id) { }
+    public record RegionCreatedEvent(int Id, int? parentId) { }
 }

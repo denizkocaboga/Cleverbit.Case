@@ -13,7 +13,5 @@ namespace Cleverbit.Case.Models.Entities
         [Required]
         [StringLength(100)]
         public string Name { get; set; }
-
-
     }
 }

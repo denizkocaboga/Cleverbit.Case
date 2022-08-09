@@ -1,8 +1,10 @@
 ﻿using Cleverbit.Case.Common.Exceptions;
 using Cleverbit.Case.Infrastructure.Cache;
 using Cleverbit.Case.Infrastructure.SqlServer;
+using Cleverbit.Case.Models.Entities;
 using Cleverbit.Case.Models.Requests;
 using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Cleverbit.Case.Business.Services
@@ -10,6 +12,7 @@ namespace Cleverbit.Case.Business.Services
     public interface IRegionService
     {
         Task Create(CreateRegionCommand request);
+        Task<IEnumerable<Region>> GetAllRegions();
     }
 
     public class RegionService : IRegionService
@@ -48,9 +51,15 @@ namespace Cleverbit.Case.Business.Services
             {
                 isExists = await _cache.IsRegionExits(command.ParentId.Value);
                 if (!isExists)
-                    throw new UnprocessableException($"parentId ({command.ParentId.Value}) not exist");
+                    throw new UnprocessableException($"there is no any region with this parentId:{command.ParentId.Value}");
             }
+        }
 
+        public async Task<IEnumerable<Region>> GetAllRegions()
+        {
+            //ToDo: Get this daha from Cache as Tree.             
+            IEnumerable<Region> result = await _sql.GetAllRegions();
+            return result;
         }
     }
 }
